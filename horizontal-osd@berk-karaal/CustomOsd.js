@@ -14,6 +14,8 @@ const HIDE_TIMEOUT = 1500;
 
 const OSD_SIZE = 110;
 
+let should_customize_this_osd = false;
+
 function convertGdkIndex(monitorIndex) {
     let screen = Gdk.Screen.get_default();
     let rect = screen.get_monitor_geometry(monitorIndex);
@@ -276,6 +278,11 @@ OsdWindowManager.prototype = {
     },
 
     _showOsdWindow: function (monitorIndex, icon, level) {
+        if (icon.names[0].includes("audio-volume-")) {
+            should_customize_this_osd = true;
+        } else {
+            should_customize_this_osd = false;
+        }
         this._osdWindows[monitorIndex].setIcon(icon);
         this._osdWindows[monitorIndex].setLevel(level);
         this._osdWindows[monitorIndex].show();
