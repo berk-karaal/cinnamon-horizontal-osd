@@ -2,9 +2,12 @@ const UUID = "horizontal-osd@berk-karaal";
 
 const Main = imports.ui.main;
 const OsdWindow = imports.ui.osdWindow;
+const Settings = imports.ui.settings;
 
 const Self = imports.extensions[UUID];
 const CustomOsd = Self.CustomOsd;
+
+let extension_settings = {};
 
 function MyExtension(meta) {
     this._init(meta);
@@ -13,11 +16,16 @@ function MyExtension(meta) {
 MyExtension.prototype = {
     _init: function (meta) {
         this.meta = meta;
+
+        this.settings = new Settings.ExtensionSettings(extension_settings, UUID, meta.uuid);
+        this.settings.bind("osd-width", "osd_width", this.on_settings_changed);
+        this.settings.bind("osd-height", "osd_height", this.on_settings_changed);
+        this.settings.bind("osd-border-radius", "osd_border_radius", this.on_settings_changed);
     },
 
     enable: function () {
         // extension enabled, make system use our custom OsdWindowManager:
-        Main.osdWindowManager = new CustomOsd.OsdWindowManager();
+        Main.osdWindowManager = new CustomOsd.OsdWindowManager(extension_settings);
     },
 
     disable: function () {
@@ -26,7 +34,8 @@ MyExtension.prototype = {
     },
 
     on_settings_changed: function () {
-        // settings changed
+        // settings changed, update osd with new user preferences:
+        Main.osdWindowManager = new CustomOsd.OsdWindowManager(extension_settings);
     },
 };
 

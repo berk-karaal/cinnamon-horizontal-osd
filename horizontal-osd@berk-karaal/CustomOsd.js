@@ -14,6 +14,7 @@ const HIDE_TIMEOUT = 1500;
 
 const OSD_SIZE = 110;
 
+let extension_settings = null;
 let should_customize_this_osd = false;
 
 function convertGdkIndex(monitorIndex) {
@@ -161,13 +162,13 @@ OsdWindow.prototype = {
 
         if (should_customize_this_osd) {
             // showing volume or brightness osd, update osd design
-            let osd_width = this._popupSize * 2
-            let osd_height = this._popupSize * 0.3
+            let osd_width = this._popupSize * extension_settings.osd_width;
+            let osd_height = this._popupSize * extension_settings.osd_height;
             let icon_size = osd_height / 2;
 
             this.actor.set_size(osd_width, osd_height);
             this.actor.vertical = false;
-            this.actor.style = `border-radius: 0px; padding: 0px;`;
+            this.actor.style = `border-radius: ${extension_settings.osd_border_radius}px; padding: 0px;`;
             this.actor.translation_y = ((monitor.height * (90 / 100)) + monitor.y) - (osd_height / 2);
             this.actor.translation_x = ((monitor.width * (50 / 100)) + monitor.x) - (osd_width / 2);
 
@@ -296,7 +297,8 @@ OsdWindow.prototype = {
     }
 };
 
-function OsdWindowManager() {
+function OsdWindowManager(preferences) {
+    extension_settings = preferences;
     this._init();
 }
 

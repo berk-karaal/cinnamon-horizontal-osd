@@ -1,0 +1,39 @@
+{
+    "layout": {
+        "type": "layout",
+        "pages": [
+            "general"
+        ],
+        "general": {
+            "type": "page",
+            "title": "General",
+            "sections": [
+                "general-osd-configs"
+            ]
+        },
+        "general-osd-configs": {
+            "type": "section",
+            "title": "Osd Window",
+            "keys": [
+                "osd-width",
+                "osd-height",
+                "osd-border-radius"
+            ]
+        }
+    },
+    "osd-width": {
+        "type": "entry",
+        "default": "2",
+        "description": "Width of OSD window."
+    },
+    "osd-height": {
+        "type": "entry",
+        "default": "0.3",
+        "description": "Height of OSD window."
+    },
+    "osd-border-radius": {
+        "type": "entry",
+        "default": "999",
+        "description": "Border radius od OSD window."
+    }
+}
