@@ -181,11 +181,16 @@ OsdWindow.prototype = {
             this._level._bar.style = `border-radius: ${extension_settings.level_bar_border_radius}px;`;
 
             if (extension_settings.label_show) {
-                this._label.style = `text-align: left; font-size: ${label_size}px; margin: ${((osd_height - label_size) / 2) + parseFloat(extension_settings.label_vertical_align_correction)}px 0 0 0; min-width: ${label_size * 3.3}px; padding: 0`;
+                this._label.style = `text-align: left; font-size: ${label_size}px; margin: ${((osd_height - label_size) / 2) + parseFloat(extension_settings.label_vertical_align_correction)}px 0 0 0; min-width: ${label_size * 3.3}px; padding: 0;`;
             } else {
                 // hide label
                 // Note: Keep "text-align". I don't know why but it breaks other OSDs' label position if we dont use it here.
                 this._label.style = "text-align: left; font-size: 0px; margin: 0px;";
+            }
+
+            // colors
+            if (extension_settings.osd_window_overwrite_colors) {
+                this.actor.style += `border-color: ${extension_settings.osd_window_border_color}; background-color: ${extension_settings.osd_window_background_color};`;
             }
         } else {
             // use default design
@@ -200,7 +205,7 @@ OsdWindow.prototype = {
             this._icon.set_icon_size(this._popupSize / (2 * scaleFactor));
             this._icon.style = "";
 
-            this._level.actor.style = "margin: 0";
+            this._level.actor.style = "margin: 0;";
             this._level._bar.style = "";
 
             this._label.style = "font-size: 1.2em; text-align: center;";

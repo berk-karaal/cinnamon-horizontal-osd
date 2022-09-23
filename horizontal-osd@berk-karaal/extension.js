@@ -32,6 +32,11 @@ MyExtension.prototype = {
         this.settings.bind("label-show", "label_show", this.on_settings_changed);
         this.settings.bind("label-size", "label_size", this.on_settings_changed);
         this.settings.bind("label-vertical-align-correction", "label_vertical_align_correction", this.on_settings_changed);
+
+        this.settings.bind("osd-window-overwrite-colors", "osd_window_overwrite_colors", this.on_settings_changed);
+        this.settings.bind("osd-window-border-color", "osd_window_border_color", this.on_settings_changed);
+        this.settings.bind("osd-window-background-color", "osd_window_background_color", this.on_settings_changed);
+
     },
 
     enable: function () {

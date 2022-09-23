@@ -2,7 +2,8 @@
     "layout": {
         "type": "layout",
         "pages": [
-            "general"
+            "general",
+            "colors"
         ],
         "general": {
             "type": "page",
@@ -47,6 +48,22 @@
                 "label-show",
                 "label-size",
                 "label-vertical-align-correction"
+            ]
+        },
+        "colors": {
+            "type": "page",
+            "title": "Colors",
+            "sections": [
+                "osd-window"
+            ]
+        },
+        "osd-window": {
+            "type": "section",
+            "title": "Osd Window",
+            "keys": [
+                "osd-window-overwrite-colors",
+                "osd-window-border-color",
+                "osd-window-background-color"
             ]
         }
     },
@@ -131,5 +148,22 @@
         "default": "-4",
         "description": "Label can not be centered correctly for now. You can adjust or decrease top margin of label here. (value: positive or negative int)",
         "tooltip": "margin-top: (calculated_value + <this value>)px"
+    },
+    "osd-window-overwrite-colors": {
+        "type": "checkbox",
+        "default": false,
+        "description": "Overwrite OSD window colors"
+    },
+    "osd-window-border-color": {
+        "type": "colorchooser",
+        "dependency": "osd-window-overwrite-colors",
+        "default": "rgba(255, 255, 255, 0.4)",
+        "description": "Border color of OSD window"
+    },
+    "osd-window-background-color": {
+        "type": "colorchooser",
+        "dependency": "osd-window-overwrite-colors",
+        "default": "rgba(40, 53, 92, 0.75)",
+        "description": "Background color of OSD window"
     }
 }
