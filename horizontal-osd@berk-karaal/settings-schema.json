@@ -193,7 +193,7 @@
     "icon-color": {
         "type": "colorchooser",
         "dependency": "icon-overwrite-colors",
-        "default": "rgba(138, 226, 52, 1)",
+        "default": "rgba(114, 159, 207, 1)",
         "description": "Icon color"
     },
     "level-bar-overwrite-colors": {
