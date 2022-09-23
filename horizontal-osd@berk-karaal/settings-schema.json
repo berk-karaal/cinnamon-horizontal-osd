@@ -43,17 +43,17 @@
     "osd-width": {
         "type": "entry",
         "default": "2",
-        "description": "Width of OSD window."
+        "description": "Width of OSD window"
     },
     "osd-height": {
         "type": "entry",
         "default": "0.3",
-        "description": "Height of OSD window."
+        "description": "Height of OSD window"
     },
     "osd-border-radius": {
         "type": "entry",
         "default": "999",
-        "description": "Border radius od OSD window."
+        "description": "Border radius od OSD window"
     },
     "osd-position-x": {
         "type": "spinbutton",
@@ -61,7 +61,7 @@
         "min": 0,
         "max": 100,
         "step": 1,
-        "description": "X position of OSD window relative to screen size by percentage."
+        "description": "X position of OSD window relative to screen size by percentage"
     },
     "osd-position-y": {
         "type": "spinbutton",
