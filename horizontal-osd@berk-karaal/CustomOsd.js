@@ -199,6 +199,10 @@ OsdWindow.prototype = {
                 this._level.actor.style += `background-color: ${extension_settings.level_bar_background_color};`;
                 this._level._bar.style += `background-color: ${extension_settings.level_bar_foreground_color};`;
             }
+            if (extension_settings.label_overwrite_colors && extension_settings.label_show) {
+                this._label.style += `color: ${extension_settings.label_color};`;
+            }
+
         } else {
             // use default design
             let scaleFactor = global.ui_scale;

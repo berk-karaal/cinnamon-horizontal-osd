@@ -56,7 +56,8 @@
             "sections": [
                 "osd-window-colors",
                 "icon-colors",
-                "level-bar-colors"
+                "level-bar-colors",
+                "label-colors"
             ]
         },
         "osd-window-colors": {
@@ -83,6 +84,14 @@
                 "level-bar-overwrite-colors",
                 "level-bar-foreground-color",
                 "level-bar-background-color"
+            ]
+        },
+        "label-colors": {
+            "type": "section",
+            "title": "Label",
+            "keys": [
+                "label-overwrite-colors",
+                "label-color"
             ]
         }
     },
@@ -188,7 +197,7 @@
     "icon-overwrite-colors": {
         "type": "checkbox",
         "default": false,
-        "description": "Overwrite icon colors"
+        "description": "Overwrite icon color"
     },
     "icon-color": {
         "type": "colorchooser",
@@ -212,5 +221,16 @@
         "dependency": "level-bar-overwrite-colors",
         "default": "rgba(32, 74, 135, 1)",
         "description": "Level bar background color"
+    },
+    "label-overwrite-colors": {
+        "type": "checkbox",
+        "default": false,
+        "description": "Overwrite label color"
+    },
+    "label-color": {
+        "type": "colorchooser",
+        "dependency": "label-overwrite-colors",
+        "default": "rgba(142, 175, 210, 1)",
+        "description": "Label color"
     }
 }

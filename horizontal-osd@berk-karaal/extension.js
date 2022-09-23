@@ -47,6 +47,9 @@ MyExtension.prototype = {
         this.settings.bind("level-bar-foreground-color", "level_bar_foreground_color", this.on_settings_changed);
         this.settings.bind("level-bar-background-color", "level_bar_background_color", this.on_settings_changed);
 
+        this.settings.bind("label-overwrite-colors", "label_overwrite_colors", this.on_settings_changed);
+        this.settings.bind("label-color", "label_color", this.on_settings_changed);
+
     },
 
     enable: function () {
