@@ -9,7 +9,8 @@
             "title": "General",
             "sections": [
                 "general-osd-configs",
-                "general-icon-configs"
+                "general-icon-configs",
+                "general-level-bar-configs"
             ]
         },
         "general-osd-configs": {
@@ -28,6 +29,14 @@
             "title": "Icon",
             "keys": [
                 "icon-size"
+            ]
+        },
+        "general-level-bar-configs": {
+            "type": "section",
+            "title": "Level Bar",
+            "keys": [
+                "level-bar-size",
+                "level-bar-border-radius"
             ]
         }
     },
@@ -69,5 +78,18 @@
         "max": 100,
         "step": 1,
         "description": "Icon size"
+    },
+    "level-bar-size": {
+        "type": "spinbutton",
+        "default": 50,
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "description": "Level bar size"
+    },
+    "level-bar-border-radius": {
+        "type": "entry",
+        "default": "2",
+        "description": "Border radius of level bar"
     }
 }

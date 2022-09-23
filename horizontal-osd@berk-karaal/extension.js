@@ -24,6 +24,8 @@ MyExtension.prototype = {
         this.settings.bind("osd-position-x", "osd_position_x", this.on_settings_changed);
         this.settings.bind("osd-position-y", "osd_position_y", this.on_settings_changed);
         this.settings.bind("icon-size", "icon_size", this.on_settings_changed);
+        this.settings.bind("level-bar-size", "level_bar_size", this.on_settings_changed);
+        this.settings.bind("level-bar-border-radius", "level_bar_border_radius", this.on_settings_changed);
 
     },
 
