@@ -43,6 +43,10 @@ MyExtension.prototype = {
         this.settings.bind("icon-overwrite-colors", "icon_overwrite_colors", this.on_settings_changed);
         this.settings.bind("icon-color", "icon_color", this.on_settings_changed);
 
+        this.settings.bind("level-bar-overwrite-colors", "level_bar_overwrite_colors", this.on_settings_changed);
+        this.settings.bind("level-bar-foreground-color", "level_bar_foreground_color", this.on_settings_changed);
+        this.settings.bind("level-bar-background-color", "level_bar_background_color", this.on_settings_changed);
+
     },
 
     enable: function () {

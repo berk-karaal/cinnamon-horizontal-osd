@@ -55,7 +55,8 @@
             "title": "Colors",
             "sections": [
                 "osd-window-colors",
-                "icon-colors"
+                "icon-colors",
+                "level-bar-colors"
             ]
         },
         "osd-window-colors": {
@@ -73,6 +74,15 @@
             "keys": [
                 "icon-overwrite-colors",
                 "icon-color"
+            ]
+        },
+        "level-bar-colors": {
+            "type": "section",
+            "title": "Level Bar",
+            "keys": [
+                "level-bar-overwrite-colors",
+                "level-bar-foreground-color",
+                "level-bar-background-color"
             ]
         }
     },
@@ -185,5 +195,22 @@
         "dependency": "icon-overwrite-colors",
         "default": "rgba(138, 226, 52, 1)",
         "description": "Icon color"
+    },
+    "level-bar-overwrite-colors": {
+        "type": "checkbox",
+        "default": false,
+        "description": "Overwrite level bar colors"
+    },
+    "level-bar-foreground-color": {
+        "type": "colorchooser",
+        "dependency": "level-bar-overwrite-colors",
+        "default": "rgba(114, 159, 207, 1)",
+        "description": "Level bar foreground color"
+    },
+    "level-bar-background-color": {
+        "type": "colorchooser",
+        "dependency": "level-bar-overwrite-colors",
+        "default": "rgba(32, 74, 135, 1)",
+        "description": "Level bar background color"
     }
 }
