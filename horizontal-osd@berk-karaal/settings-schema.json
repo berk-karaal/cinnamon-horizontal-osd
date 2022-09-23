@@ -43,17 +43,20 @@
     "osd-width": {
         "type": "entry",
         "default": "2",
-        "description": "Width of OSD window"
+        "description": "Width of OSD window",
+        "tooltip": "osd_width = this._popupSize * <this value>"
     },
     "osd-height": {
         "type": "entry",
         "default": "0.3",
-        "description": "Height of OSD window"
+        "description": "Height of OSD window",
+        "tooltip": "osd_height = this._popupSize * <this value>"
     },
     "osd-border-radius": {
         "type": "entry",
         "default": "999",
-        "description": "Border radius od OSD window"
+        "description": "Border radius od OSD window (in pixels)",
+        "tooltip": "border-radius: <this value>px;"
     },
     "osd-position-x": {
         "type": "spinbutton",
@@ -61,7 +64,8 @@
         "min": 0,
         "max": 100,
         "step": 1,
-        "description": "X position of OSD window relative to screen size by percentage"
+        "description": "X position of OSD window relative to screen size by percentage",
+        "tooltip": "0 is left, 100 is right"
     },
     "osd-position-y": {
         "type": "spinbutton",
@@ -69,7 +73,8 @@
         "min": 0,
         "max": 100,
         "step": 1,
-        "description": "Y position of OSD window relative to screen size by percentage"
+        "description": "Y position of OSD window relative to screen size by percentage",
+        "tooltip": "0 is top, 100 is bottom"
     },
     "icon-size": {
         "type": "spinbutton",
@@ -77,7 +82,8 @@
         "min": 0,
         "max": 100,
         "step": 1,
-        "description": "Icon size"
+        "description": "Size of icon relative to OSD height by percentage",
+        "tooltip": "icon_size = osd_height * (<this value> / 100)"
     },
     "level-bar-size": {
         "type": "spinbutton",
@@ -85,11 +91,13 @@
         "min": 0,
         "max": 100,
         "step": 1,
-        "description": "Level bar size"
+        "description": "Size of level bar relative to OSD height by percentage",
+        "tooltip": "level_bar_size = osd_height * (<this value> / 100)"
     },
     "level-bar-border-radius": {
         "type": "entry",
         "default": "2",
-        "description": "Border radius of level bar"
+        "description": "Border radius of level bar (in pixels)",
+        "tooltip": "border-radius: <this value>px;"
     }
 }
