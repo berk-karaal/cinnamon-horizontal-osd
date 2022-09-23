@@ -21,6 +21,9 @@ MyExtension.prototype = {
         this.settings.bind("osd-width", "osd_width", this.on_settings_changed);
         this.settings.bind("osd-height", "osd_height", this.on_settings_changed);
         this.settings.bind("osd-border-radius", "osd_border_radius", this.on_settings_changed);
+        this.settings.bind("osd-position-x", "osd_position_x", this.on_settings_changed);
+        this.settings.bind("osd-position-y", "osd_position_y", this.on_settings_changed);
+
     },
 
     enable: function () {

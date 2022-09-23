@@ -17,7 +17,9 @@
             "keys": [
                 "osd-width",
                 "osd-height",
-                "osd-border-radius"
+                "osd-border-radius",
+                "osd-position-x",
+                "osd-position-y"
             ]
         }
     },
@@ -35,5 +37,21 @@
         "type": "entry",
         "default": "999",
         "description": "Border radius od OSD window."
+    },
+    "osd-position-x": {
+        "type": "spinbutton",
+        "default": 50,
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "description": "X position of OSD window relative to screen size by percentage."
+    },
+    "osd-position-y": {
+        "type": "spinbutton",
+        "default": 90,
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "description": "Y position of OSD window relative to screen size by percentage"
     }
 }

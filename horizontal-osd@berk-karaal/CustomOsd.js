@@ -169,8 +169,8 @@ OsdWindow.prototype = {
             this.actor.set_size(osd_width, osd_height);
             this.actor.vertical = false;
             this.actor.style = `border-radius: ${extension_settings.osd_border_radius}px; padding: 0px;`;
-            this.actor.translation_y = ((monitor.height * (90 / 100)) + monitor.y) - (osd_height / 2);
-            this.actor.translation_x = ((monitor.width * (50 / 100)) + monitor.x) - (osd_width / 2);
+            this.actor.translation_y = ((monitor.height * (extension_settings.osd_position_y / 100)) + monitor.y) - (osd_height / 2);
+            this.actor.translation_x = ((monitor.width * (extension_settings.osd_position_x / 100)) + monitor.x) - (osd_width / 2);
 
             this._icon.set_icon_size(icon_size);
             this._icon.style = `margin: ${(osd_height - icon_size) / 2}px 0px; margin-left: 10px;`
