@@ -166,6 +166,7 @@ OsdWindow.prototype = {
             let osd_height = this._popupSize * extension_settings.osd_height;
             let icon_size = osd_height * (extension_settings.icon_size / 100);
             let level_bar_size = osd_height * (extension_settings.level_bar_size / 100);
+            let label_size = osd_height * (extension_settings.label_size / 100);
 
             this.actor.set_size(osd_width, osd_height);
             this.actor.vertical = false;
@@ -179,7 +180,13 @@ OsdWindow.prototype = {
             this._level.actor.style = `margin: ${(osd_height - level_bar_size) / 2}px 0; border-radius: ${extension_settings.level_bar_border_radius}px;`;
             this._level._bar.style = `border-radius: ${extension_settings.level_bar_border_radius}px;`;
 
-            this._label.style = `text-align: left; font-size: 1.2em; margin: 15px 0px 15px 0px; min-width: 50px;`;
+            if (extension_settings.label_show) {
+                this._label.style = `text-align: left; font-size: ${label_size}px; margin: ${((osd_height - label_size) / 2) + parseFloat(extension_settings.label_vertical_align_correction)}px 0 0 0; min-width: ${label_size * 3.3}px; padding: 0`;
+            } else {
+                // hide label
+                // Note: Keep "text-align". I don't know why but it breaks other OSDs' label position if we dont use it here.
+                this._label.style = "text-align: left; font-size: 0px; margin: 0px;";
+            }
         } else {
             // use default design
             let scaleFactor = global.ui_scale;

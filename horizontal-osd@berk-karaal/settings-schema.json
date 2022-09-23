@@ -10,7 +10,8 @@
             "sections": [
                 "general-osd-configs",
                 "general-icon-configs",
-                "general-level-bar-configs"
+                "general-level-bar-configs",
+                "general-label-configs"
             ]
         },
         "general-osd-configs": {
@@ -37,6 +38,15 @@
             "keys": [
                 "level-bar-size",
                 "level-bar-border-radius"
+            ]
+        },
+        "general-label-configs": {
+            "type": "section",
+            "title": "Label",
+            "keys": [
+                "label-show",
+                "label-size",
+                "label-vertical-align-correction"
             ]
         }
     },
@@ -99,5 +109,27 @@
         "default": "2",
         "description": "Border radius of level bar (in pixels)",
         "tooltip": "border-radius: <this value>px;"
+    },
+    "label-show": {
+        "type": "checkbox",
+        "default": true,
+        "description": "Show label"
+    },
+    "label-size": {
+        "type": "spinbutton",
+        "dependency": "label-show",
+        "default": 35,
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "description": "Size of label relative to OSD height by percentage",
+        "tooltip": "label_size = osd_height * (<this value> / 100)"
+    },
+    "label-vertical-align-correction": {
+        "type": "entry",
+        "dependency": "label-show",
+        "default": "-4",
+        "description": "Label can not be centered correctly for now. You can adjust or decrease top margin of label here. (value: positive or negative int)",
+        "tooltip": "margin-top: (calculated_value + <this value>)px"
     }
 }
