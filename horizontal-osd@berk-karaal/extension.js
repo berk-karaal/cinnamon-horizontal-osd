@@ -18,6 +18,8 @@ MyExtension.prototype = {
         this.meta = meta;
 
         this.settings = new Settings.ExtensionSettings(extension_settings, UUID, meta.uuid);
+
+        // general:
         this.settings.bind("osd-width", "osd_width", this.on_settings_changed);
         this.settings.bind("osd-height", "osd_height", this.on_settings_changed);
         this.settings.bind("osd-border-radius", "osd_border_radius", this.on_settings_changed);
@@ -33,9 +35,13 @@ MyExtension.prototype = {
         this.settings.bind("label-size", "label_size", this.on_settings_changed);
         this.settings.bind("label-vertical-align-correction", "label_vertical_align_correction", this.on_settings_changed);
 
+        // colors:
         this.settings.bind("osd-window-overwrite-colors", "osd_window_overwrite_colors", this.on_settings_changed);
         this.settings.bind("osd-window-border-color", "osd_window_border_color", this.on_settings_changed);
         this.settings.bind("osd-window-background-color", "osd_window_background_color", this.on_settings_changed);
+
+        this.settings.bind("icon-overwrite-colors", "icon_overwrite_colors", this.on_settings_changed);
+        this.settings.bind("icon-color", "icon_color", this.on_settings_changed);
 
     },
 

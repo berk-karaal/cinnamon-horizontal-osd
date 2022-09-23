@@ -54,16 +54,25 @@
             "type": "page",
             "title": "Colors",
             "sections": [
-                "osd-window"
+                "osd-window-colors",
+                "icon-colors"
             ]
         },
-        "osd-window": {
+        "osd-window-colors": {
             "type": "section",
             "title": "Osd Window",
             "keys": [
                 "osd-window-overwrite-colors",
                 "osd-window-border-color",
                 "osd-window-background-color"
+            ]
+        },
+        "icon-colors": {
+            "type": "section",
+            "title": "Icon",
+            "keys": [
+                "icon-overwrite-colors",
+                "icon-color"
             ]
         }
     },
@@ -165,5 +174,16 @@
         "dependency": "osd-window-overwrite-colors",
         "default": "rgba(40, 53, 92, 0.75)",
         "description": "Background color of OSD window"
+    },
+    "icon-overwrite-colors": {
+        "type": "checkbox",
+        "default": false,
+        "description": "Overwrite icon colors"
+    },
+    "icon-color": {
+        "type": "colorchooser",
+        "dependency": "icon-overwrite-colors",
+        "default": "rgba(138, 226, 52, 1)",
+        "description": "Icon color"
     }
 }

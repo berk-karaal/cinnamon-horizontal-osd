@@ -192,6 +192,9 @@ OsdWindow.prototype = {
             if (extension_settings.osd_window_overwrite_colors) {
                 this.actor.style += `border-color: ${extension_settings.osd_window_border_color}; background-color: ${extension_settings.osd_window_background_color};`;
             }
+            if (extension_settings.icon_overwrite_colors) {
+                this._icon.style += `color: ${extension_settings.icon_color};`;
+            }
         } else {
             // use default design
             let scaleFactor = global.ui_scale;
