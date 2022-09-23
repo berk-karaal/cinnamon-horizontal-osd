@@ -164,7 +164,7 @@ OsdWindow.prototype = {
             // showing volume or brightness osd, update osd design
             let osd_width = this._popupSize * extension_settings.osd_width;
             let osd_height = this._popupSize * extension_settings.osd_height;
-            let icon_size = osd_height / 2;
+            let icon_size = osd_height * (extension_settings.icon_size / 100);
 
             this.actor.set_size(osd_width, osd_height);
             this.actor.vertical = false;
@@ -173,7 +173,7 @@ OsdWindow.prototype = {
             this.actor.translation_x = ((monitor.width * (extension_settings.osd_position_x / 100)) + monitor.x) - (osd_width / 2);
 
             this._icon.set_icon_size(icon_size);
-            this._icon.style = `margin: ${(osd_height - icon_size) / 2}px 0px; margin-left: 10px;`
+            this._icon.style = `margin: ${(osd_height - icon_size) / 2}px 0px; margin-left: 10px; padding: 0px;`
 
             this._level.actor.style = `margin: 10px 0; border-radius: 0px;`;
             this._level._bar.style = `border-radius: 0px;`;

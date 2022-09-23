@@ -8,7 +8,8 @@
             "type": "page",
             "title": "General",
             "sections": [
-                "general-osd-configs"
+                "general-osd-configs",
+                "general-icon-configs"
             ]
         },
         "general-osd-configs": {
@@ -20,6 +21,13 @@
                 "osd-border-radius",
                 "osd-position-x",
                 "osd-position-y"
+            ]
+        },
+        "general-icon-configs": {
+            "type": "section",
+            "title": "Icon",
+            "keys": [
+                "icon-size"
             ]
         }
     },
@@ -53,5 +61,13 @@
         "max": 100,
         "step": 1,
         "description": "Y position of OSD window relative to screen size by percentage"
+    },
+    "icon-size": {
+        "type": "spinbutton",
+        "default": 50,
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "description": "Icon size"
     }
 }
