@@ -114,10 +114,10 @@ OsdWindow.prototype = {
         });
 
         this._icon = new St.Icon();
-        this.actor.add(this._icon, { expand: true });
+        this.actor.add(this._icon, { expand: false });
 
         this._level = new LevelBar();
-        this.actor.add(this._level.actor);
+        this.actor.add(this._level.actor, { expand: true });
 
         this._label = new St.Label();
         this._label.style = 'font-size: 1.2em; text-align: center;'
@@ -157,6 +157,52 @@ OsdWindow.prototype = {
     },
 
     show: function () {
+        let monitor = Main.layoutManager.monitors[this._monitorIndex];
+
+        if (should_customize_this_osd) {
+            // showing volume or brightness osd, update osd design
+            let osd_width = this._popupSize * 2
+            let osd_height = this._popupSize * 0.3
+            let icon_size = osd_height / 2;
+
+            this.actor.set_size(osd_width, osd_height);
+            this.actor.vertical = false;
+            this.actor.style = `border-radius: 0px; padding: 0px;`;
+            this.actor.translation_y = ((monitor.height * (90 / 100)) + monitor.y) - (osd_height / 2);
+            this.actor.translation_x = ((monitor.width * (50 / 100)) + monitor.x) - (osd_width / 2);
+
+            this._icon.set_icon_size(icon_size);
+            this._icon.style = `margin: ${(osd_height - icon_size) / 2}px 0px; margin-left: 10px;`
+
+            this._level.actor.style = `margin: 10px 0; border-radius: 0px;`;
+            this._level._bar.style = `border-radius: 0px;`;
+
+            this._label.style = `text-align: left; font-size: 1.2em; margin: 15px 0px 15px 0px; min-width: 50px;`;
+        } else {
+            // use default design
+            let scaleFactor = global.ui_scale;
+
+            this.actor.vertical = true;
+            this.actor.style = "padding: 20px;";
+            this.actor.set_size(this._popupSize, this._popupSize);
+            this.actor.translation_y = (monitor.height + monitor.y) - (this._popupSize + (50 * scaleFactor));
+            this.actor.translation_x = ((monitor.width / 2) + monitor.x) - (this._popupSize / 2);
+
+            this._icon.set_icon_size(this._popupSize / (2 * scaleFactor));
+            this._icon.style = "";
+
+            this._level.actor.style = "margin: 0";
+            this._level._bar.style = "";
+
+            this._label.style = "font-size: 1.2em; text-align: center;";
+
+            this.actor.vertical = true;
+            this._icon.icon_size = this._popupSize / (2 * scaleFactor);
+            this.actor.set_size(this._popupSize, this._popupSize);
+            this.actor.translation_y = (monitor.height + monitor.y) - (this._popupSize + (50 * scaleFactor));
+            this.actor.translation_x = ((monitor.width / 2) + monitor.x) - (this._popupSize / 2);
+        }
+
         if (this._osdBaseSize == undefined)
             return;
 
