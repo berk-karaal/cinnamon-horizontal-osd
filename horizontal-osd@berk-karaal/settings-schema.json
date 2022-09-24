@@ -100,7 +100,9 @@
             "type": "page",
             "title": "Advanced",
             "sections": [
-                "advanced-osd-window-configs"
+                "advanced-osd-window-configs",
+                "advanced-icon-configs",
+                "advanced-level-bar-configs"
             ]
         },
         "advanced-osd-window-configs": {
@@ -108,9 +110,21 @@
             "title": "Osd Window",
             "keys": [
                 "osd-window-overwrite-css",
-                "osd-window-css",
+                "osd-window-css"
+            ]
+        },
+        "advanced-icon-configs": {
+            "type": "section",
+            "title": "Icon",
+            "keys": [
                 "icon-overwrite-css",
-                "icon-css",
+                "icon-css"
+            ]
+        },
+        "advanced-level-bar-configs": {
+            "type": "section",
+            "title": "Level Bar",
+            "keys": [
                 "level-bar-overwrite-css",
                 "level-bar-background-css",
                 "level-bar-foreground-css"
