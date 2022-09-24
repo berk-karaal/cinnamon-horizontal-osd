@@ -51,6 +51,9 @@ MyExtension.prototype = {
         this.settings.bind("label-overwrite-colors", "label_overwrite_colors", this.on_settings_changed);
         this.settings.bind("label-color", "label_color", this.on_settings_changed);
 
+        // advanced:
+        this.settings.bind("osd-window-overwrite-css", "osd_window_overwrite_css", this.on_settings_changed);
+        this.settings.bind("osd-window-css", "osd_window_css", this.on_settings_changed);
     },
 
     enable: function () {

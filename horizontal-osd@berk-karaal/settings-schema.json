@@ -3,7 +3,8 @@
         "type": "layout",
         "pages": [
             "general",
-            "colors"
+            "colors",
+            "advanced"
         ],
         "general": {
             "type": "page",
@@ -93,6 +94,21 @@
             "keys": [
                 "label-overwrite-colors",
                 "label-color"
+            ]
+        },
+        "advanced": {
+            "type": "page",
+            "title": "Advanced",
+            "sections": [
+                "advanced-osd-window-configs"
+            ]
+        },
+        "advanced-osd-window-configs": {
+            "type": "section",
+            "title": "Osd Window",
+            "keys": [
+                "osd-window-overwrite-css",
+                "osd-window-css"
             ]
         }
     },
@@ -238,5 +254,16 @@
         "dependency": "label-overwrite-colors",
         "default": "rgba(142, 175, 210, 1)",
         "description": "Label color"
+    },
+    "osd-window-overwrite-css": {
+        "type": "checkbox",
+        "default": false,
+        "description": "Overwrite CSS of OSD window"
+    },
+    "osd-window-css": {
+        "type": "entry",
+        "dependency": "osd-window-overwrite-css",
+        "default": "border-radius: 99px;",
+        "description": "CSS of OSD window"
     }
 }
