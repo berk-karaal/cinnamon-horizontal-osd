@@ -23,7 +23,8 @@
                 "osd-height",
                 "osd-border-radius",
                 "osd-position-x",
-                "osd-position-y"
+                "osd-position-y",
+                "osd-hide-timeout"
             ]
         },
         "general-icon-configs": {
@@ -130,6 +131,11 @@
         "step": 1,
         "description": "Y position of OSD window relative to screen size by percentage",
         "tooltip": "0 is top, 100 is bottom"
+    },
+    "osd-hide-timeout": {
+        "type": "entry",
+        "default": "1500",
+        "description": "Hide timeout of OSD window (in milliseconds)"
     },
     "icon-size": {
         "type": "spinbutton",

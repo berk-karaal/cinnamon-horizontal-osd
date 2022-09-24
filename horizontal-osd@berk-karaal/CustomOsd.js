@@ -10,7 +10,7 @@ const Meta = imports.gi.Meta;
 
 const LEVEL_ANIMATION_TIME = 0.1;
 const FADE_TIME = 0.1;
-const HIDE_TIMEOUT = 1500;
+let HIDE_TIMEOUT = 1500;
 
 const OSD_SIZE = 110;
 
@@ -323,6 +323,7 @@ OsdWindow.prototype = {
 
 function OsdWindowManager(preferences) {
     extension_settings = preferences;
+    HIDE_TIMEOUT = extension_settings.osd_hide_timeout;
     this._init();
 }
 
