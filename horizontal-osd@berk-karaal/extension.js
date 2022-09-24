@@ -61,6 +61,9 @@ MyExtension.prototype = {
         this.settings.bind("level-bar-overwrite-css", "level_bar_overwrite_css", this.on_settings_changed);
         this.settings.bind("level-bar-background-css", "level_bar_background_css", this.on_settings_changed);
         this.settings.bind("level-bar-foreground-css", "level_bar_foreground_css", this.on_settings_changed);
+
+        this.settings.bind("label-overwrite-css", "label_overwrite_css", this.on_settings_changed);
+        this.settings.bind("label-css", "label_css", this.on_settings_changed);
     },
 
     enable: function () {

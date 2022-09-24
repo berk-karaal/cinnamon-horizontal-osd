@@ -195,7 +195,11 @@ OsdWindow.prototype = {
             }
 
             if (extension_settings.label_show) {
-                this._label.style = `text-align: left; font-size: ${label_size}px; margin: ${((osd_height - label_size) / 2) + parseFloat(extension_settings.label_vertical_align_correction)}px 0 0 0; min-width: ${label_size * 3.3}px; padding: 0;`;
+                if (extension_settings.label_overwrite_css) {
+                    this._label.style = extension_settings.label_css;
+                } else {
+                    this._label.style = `text-align: left; font-size: ${label_size}px; margin: ${((osd_height - label_size) / 2) + parseFloat(extension_settings.label_vertical_align_correction)}px 0 0 0; min-width: ${label_size * 3.3}px; padding: 0;`;
+                }
             } else {
                 // hide label
                 // Note: Keep "text-align". I don't know why but it breaks other OSDs' label position if we dont use it here.

@@ -102,7 +102,8 @@
             "sections": [
                 "advanced-osd-window-configs",
                 "advanced-icon-configs",
-                "advanced-level-bar-configs"
+                "advanced-level-bar-configs",
+                "advanced-label-configs"
             ]
         },
         "advanced-osd-window-configs": {
@@ -128,6 +129,14 @@
                 "level-bar-overwrite-css",
                 "level-bar-background-css",
                 "level-bar-foreground-css"
+            ]
+        },
+        "advanced-label-configs": {
+            "type": "section",
+            "title": "Label",
+            "keys": [
+                "label-overwrite-css",
+                "label-css"
             ]
         }
     },
@@ -312,5 +321,16 @@
         "dependency": "level-bar-overwrite-css",
         "default": "border-radius: 0px;",
         "description": "CSS for foregorund of level bar"
+    },
+    "label-overwrite-css": {
+        "type": "checkbox",
+        "default": false,
+        "description": "Overwrite CSS of label"
+    },
+    "label-css": {
+        "type": "entry",
+        "dependency": "label-overwrite-css",
+        "default": "text-align: left; font-size: 1.2em; margin: 10px 0 0 0; min-width: 80px; padding: 0;",
+        "description": "CSS of label"
     }
 }
