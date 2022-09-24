@@ -108,7 +108,9 @@
             "title": "Osd Window",
             "keys": [
                 "osd-window-overwrite-css",
-                "osd-window-css"
+                "osd-window-css",
+                "icon-overwrite-css",
+                "icon-css"
             ]
         }
     },
@@ -265,5 +267,16 @@
         "dependency": "osd-window-overwrite-css",
         "default": "border-radius: 99px;",
         "description": "CSS of OSD window"
+    },
+    "icon-overwrite-css": {
+        "type": "checkbox",
+        "default": false,
+        "description": "Overwrite CSS of icon"
+    },
+    "icon-css": {
+        "type": "entry",
+        "dependency": "icon-overwrite-css",
+        "default": "margin: 0; margin-left: 10px; padding: 0;",
+        "description": "CSS of icon"
     }
 }

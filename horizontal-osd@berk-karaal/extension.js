@@ -54,6 +54,8 @@ MyExtension.prototype = {
         // advanced:
         this.settings.bind("osd-window-overwrite-css", "osd_window_overwrite_css", this.on_settings_changed);
         this.settings.bind("osd-window-css", "osd_window_css", this.on_settings_changed);
+        this.settings.bind("icon-overwrite-css", "icon_overwrite_css", this.on_settings_changed);
+        this.settings.bind("icon-css", "icon_css", this.on_settings_changed);
     },
 
     enable: function () {

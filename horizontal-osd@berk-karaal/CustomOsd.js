@@ -180,7 +180,11 @@ OsdWindow.prototype = {
             }
 
             this._icon.set_icon_size(icon_size);
-            this._icon.style = `margin: ${(osd_height - icon_size) / 2}px 0px; margin-left: 10px; padding: 0px;`
+            if (extension_settings.icon_overwrite_css) {
+                this._icon.style = extension_settings.icon_css;
+            } else {
+                this._icon.style = `margin: ${(osd_height - icon_size) / 2}px 0px; margin-left: 10px; padding: 0px;`
+            }
 
             this._level.actor.style = `margin: ${(osd_height - level_bar_size) / 2}px 0; border-radius: ${extension_settings.level_bar_border_radius}px;`;
             this._level._bar.style = `border-radius: ${extension_settings.level_bar_border_radius}px;`;
