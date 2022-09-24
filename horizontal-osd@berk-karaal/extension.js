@@ -54,8 +54,13 @@ MyExtension.prototype = {
         // advanced:
         this.settings.bind("osd-window-overwrite-css", "osd_window_overwrite_css", this.on_settings_changed);
         this.settings.bind("osd-window-css", "osd_window_css", this.on_settings_changed);
+
         this.settings.bind("icon-overwrite-css", "icon_overwrite_css", this.on_settings_changed);
         this.settings.bind("icon-css", "icon_css", this.on_settings_changed);
+
+        this.settings.bind("level-bar-overwrite-css", "level_bar_overwrite_css", this.on_settings_changed);
+        this.settings.bind("level-bar-background-css", "level_bar_background_css", this.on_settings_changed);
+        this.settings.bind("level-bar-foreground-css", "level_bar_foreground_css", this.on_settings_changed);
     },
 
     enable: function () {

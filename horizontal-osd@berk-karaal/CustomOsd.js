@@ -186,8 +186,13 @@ OsdWindow.prototype = {
                 this._icon.style = `margin: ${(osd_height - icon_size) / 2}px 0px; margin-left: 10px; padding: 0px;`
             }
 
-            this._level.actor.style = `margin: ${(osd_height - level_bar_size) / 2}px 0; border-radius: ${extension_settings.level_bar_border_radius}px;`;
-            this._level._bar.style = `border-radius: ${extension_settings.level_bar_border_radius}px;`;
+            if (extension_settings.level_bar_overwrite_css) {
+                this._level.actor.style = extension_settings.level_bar_background_css;
+                this._level._bar.style = extension_settings.level_bar_foreground_css;
+            } else {
+                this._level.actor.style = `margin: ${(osd_height - level_bar_size) / 2}px 0; border-radius: ${extension_settings.level_bar_border_radius}px;`;
+                this._level._bar.style = `border-radius: ${extension_settings.level_bar_border_radius}px;`;
+            }
 
             if (extension_settings.label_show) {
                 this._label.style = `text-align: left; font-size: ${label_size}px; margin: ${((osd_height - label_size) / 2) + parseFloat(extension_settings.label_vertical_align_correction)}px 0 0 0; min-width: ${label_size * 3.3}px; padding: 0;`;
