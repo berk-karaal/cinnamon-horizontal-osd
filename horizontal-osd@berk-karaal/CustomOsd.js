@@ -369,7 +369,7 @@ OsdWindowManager.prototype = {
     },
 
     _showOsdWindow: function (monitorIndex, icon, level) {
-        if (icon.names[0].includes("audio-volume-")) {
+        if (icon.names[0].includes("audio-volume-") || icon.names[0].includes("display-brightness-symbolic")) {
             should_customize_this_osd = true;
         } else {
             should_customize_this_osd = false;
