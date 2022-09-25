@@ -369,7 +369,10 @@ OsdWindowManager.prototype = {
     },
 
     _showOsdWindow: function (monitorIndex, icon, level) {
-        if (icon.names[0].includes("audio-volume-") || icon.names[0].includes("display-brightness-symbolic")) {
+        if ((icon.names[0].includes("audio-volume-") && extension_settings.selected_volume_as_horizontal) ||
+            (icon.names[0].includes("display-brightness-symbolic") && extension_settings.selected_brightness_as_horizontal) ||
+            (icon.names[0].includes("microphone-sensitivity-") && extension_settings.selected_mic_as_horizontal)
+        ) {
             should_customize_this_osd = true;
         } else {
             should_customize_this_osd = false;

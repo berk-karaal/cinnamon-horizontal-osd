@@ -4,7 +4,8 @@
         "pages": [
             "general",
             "colors",
-            "advanced"
+            "advanced",
+            "select-horizontal-osds"
         ],
         "general": {
             "type": "page",
@@ -137,6 +138,23 @@
             "keys": [
                 "label-overwrite-css",
                 "label-css"
+            ]
+        },
+        "select-horizontal-osds": {
+            "type": "page",
+            "title": "Select OSDs",
+            "sections": [
+                "select-horizontal-osds-section"
+            ]
+        },
+        "select-horizontal-osds-section": {
+            "type": "section",
+            "title": "Select OSDs",
+            "keys": [
+                "select-osds-info-text",
+                "selected-volume-as-horizontal",
+                "selected-brightness-as-horizontal",
+                "selected-mic-as-horizontal"
             ]
         }
     },
@@ -332,5 +350,24 @@
         "dependency": "label-overwrite-css",
         "default": "text-align: left; font-size: 1.2em; margin: 10px 0 0 0; min-width: 80px; padding: 0;",
         "description": "CSS of label"
+    },
+    "select-osds-info-text": {
+        "type": "label",
+        "description": "You can choose which OSDs to be horizontal here"
+    },
+    "selected-volume-as-horizontal": {
+        "type": "checkbox",
+        "default": true,
+        "description": "Volume OSD"
+    },
+    "selected-brightness-as-horizontal": {
+        "type": "checkbox",
+        "default": true,
+        "description": "Brightness OSD"
+    },
+    "selected-mic-as-horizontal": {
+        "type": "checkbox",
+        "default": true,
+        "description": "Microphone OSD"
     }
 }

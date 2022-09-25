@@ -64,6 +64,12 @@ MyExtension.prototype = {
 
         this.settings.bind("label-overwrite-css", "label_overwrite_css", this.on_settings_changed);
         this.settings.bind("label-css", "label_css", this.on_settings_changed);
+
+        // select osds:
+        this.settings.bind("selected-volume-as-horizontal", "selected_volume_as_horizontal", this.on_settings_changed);
+        this.settings.bind("selected-brightness-as-horizontal", "selected_brightness_as_horizontal", this.on_settings_changed);
+        this.settings.bind("selected-mic-as-horizontal", "selected_mic_as_horizontal", this.on_settings_changed);
+
     },
 
     enable: function () {
