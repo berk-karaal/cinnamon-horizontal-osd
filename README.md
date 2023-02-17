@@ -20,6 +20,12 @@ Example custom OSDs:
 
 ## Installation
 
+### Cinnamon Spices
+
+Search for "Horizontal OSD" in Cinnamon extension settings or download from [here](https://cinnamon-spices.linuxmint.com/extensions/view/93).
+
+### From Source
+
 ```
 $ cd ~/.local/share/cinnamon/extensions/
 $ git clone https://github.com/berk-karaal/cinnamon-horizontal-osd.git
