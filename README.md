@@ -4,7 +4,7 @@ Make volume and brightness OSDs horizontal on your Cinnamon desktop environment.
 
 OSD Preview:
 
-![Preview](./preview.png)
+![Preview](https://github.com/berk-karaal/cinnamon-horizontal-osd/raw/main/preview.png)
 
 Alongside making your OSDs horizontal, there are lots of configuration options so you can customize OSDs as you want. Such as:
 - Position, size, border-radius and hide timeout of osd window
@@ -16,7 +16,7 @@ Also you can write your custom CSS for all those elements.
 
 Example custom OSDs:
 
-![Custom OSDs](./customize-examples.png)
+![Custom OSDs](https://github.com/berk-karaal/cinnamon-horizontal-osd/raw/main/customize-examples.png)
 
 ## Installation
 
