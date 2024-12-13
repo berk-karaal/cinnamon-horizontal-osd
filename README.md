@@ -1,3 +1,7 @@
+:warning: **Status:** This extension is no longer maintained. You can fork this repo or continue the
+development over Cinnamon Spice Extensions repository
+[here](https://github.com/linuxmint/cinnamon-spices-extensions/tree/master/horizontal-osd%40berk-karaal).
+
 # Horizontal OSD
 
 Make volume and brightness OSDs horizontal on your Cinnamon desktop environment. It's customizable so you can make your own OSDs too.
